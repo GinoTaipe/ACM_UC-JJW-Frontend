@@ -1,0 +1,540 @@
+/* ============================================ */
+/* CONTENEDOR PRINCIPAL */
+/* ============================================ */
+
+.appointments-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ============================================ */
+/* HEADER */
+/* ============================================ */
+
+.appointments-header {
+  background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+  border-radius: 24px;
+  padding: 32px;
+  margin-bottom: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease;
+}
+
+.appointments-title {
+  font-size: 36px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.appointments-subtitle {
+  color: #e0f2fe;
+  font-size: 14px;
+}
+
+/* ============================================ */
+/* TABS */
+/* ============================================ */
+
+.appointments-tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.tab-button {
+  padding: 16px 32px;
+  border-radius: 16px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  background: #f3f4f6;
+  color: #374151;
+  font-size: 14px;
+}
+
+.tab-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.tab-active {
+  transform: scale(1.05);
+}
+
+.tab-proximas.tab-active {
+  background: linear-gradient(to right, #06b6d4, #3b82f6);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.tab-pasadas.tab-active {
+  background: linear-gradient(to right, #10b981, #059669);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.tab-canceladas.tab-active {
+  background: linear-gradient(to right, #ef4444, #dc2626);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+/* ============================================ */
+/* GRID DE CITAS */
+/* ============================================ */
+
+.appointments-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+  animation: fadeIn 0.5s ease;
+}
+
+@media (max-width: 768px) {
+  .appointments-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================ */
+/* CARDS DE CITAS */
+/* ============================================ */
+
+.appointment-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+  animation: slideUp 0.5s ease;
+}
+
+.appointment-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+.card-proxima {
+  border: 3px solid #06b6d4;
+}
+
+.card-pasada {
+  border: 3px solid #10b981;
+}
+
+.card-cancelada {
+  border: 3px solid #ef4444;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.badge {
+  padding: 8px 16px;
+  border-radius: 12px;
+  font-size: 12px;
+  color: white;
+}
+
+.badge-proxima {
+  background: linear-gradient(to right, #06b6d4, #3b82f6);
+}
+
+.badge-pasada {
+  background: linear-gradient(to right, #10b981, #059669);
+}
+
+.badge-cancelada {
+  background: linear-gradient(to right, #ef4444, #dc2626);
+}
+
+.details-button {
+  background: #f3f4f6;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  color: #374151;
+  transition: all 0.3s;
+}
+
+.details-button:hover {
+  background: #e5e7eb;
+  transform: rotate(90deg);
+}
+
+/* ============================================ */
+/* INFO DE CITAS */
+/* ============================================ */
+
+.card-info {
+  margin-bottom: 16px;
+}
+
+.info-item {
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.info-label {
+  font-size: 14px;
+  color: #6b7280;
+  font-weight: 600;
+}
+
+.info-value {
+  font-size: 16px;
+  font-weight: bold;
+  color: #1f2937;
+}
+
+/* ============================================ */
+/* DETALLES EXPANDIDOS */
+/* ============================================ */
+
+.details-box {
+  background: #f0fdfa;
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  animation: slideDown 0.3s ease;
+}
+
+.details-pasada {
+  background: #f0fdf4;
+}
+
+.details-cancelada {
+  background: #fef2f2;
+}
+
+.details-text {
+  font-size: 14px;
+  color: #1f2937;
+  margin-top: 8px;
+  line-height: 1.5;
+}
+
+/* ============================================ */
+/* BOTONES DE ACCIÓN */
+/* ============================================ */
+
+.card-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  min-width: 130px;
+  font-size: 14px;
+}
+
+.btn-reprogram {
+  background: linear-gradient(to right, #f59e0b, #f97316);
+  color: white;
+}
+
+.btn-reprogram:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 16px rgba(245, 158, 11, 0.4);
+}
+
+.btn-cancel {
+  background: linear-gradient(to right, #ef4444, #dc2626);
+  color: white;
+}
+
+.btn-cancel:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 16px rgba(239, 68, 68, 0.4);
+}
+
+/* ============================================ */
+/* MODAL */
+/* ============================================ */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease;
+  padding: 20px;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 24px;
+  padding: 32px;
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: slideUp 0.3s ease;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.modal-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #1f2937;
+}
+
+.modal-close {
+  background: #f3f4f6;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.modal-close:hover {
+  background: #e5e7eb;
+  transform: rotate(90deg);
+}
+
+.modal-subtitle {
+  color: #6b7280;
+  margin-bottom: 24px;
+  font-size: 14px;
+}
+
+.modal-body {
+  margin-bottom: 24px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 640px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.form-input {
+  padding: 12px 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.3s;
+}
+
+.form-input:focus {
+  border-color: #06b6d4;
+  box-shadow: 0 0 0 4px rgba(6, 182, 212, 0.1);
+}
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.btn-modal-cancel {
+  padding: 12px 24px;
+  background: #f3f4f6;
+  color: #374151;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-modal-cancel:hover {
+  background: #e5e7eb;
+}
+
+.btn-modal-confirm {
+  padding: 12px 24px;
+  background: linear-gradient(to right, #06b6d4, #3b82f6);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-modal-confirm:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 16px rgba(6, 182, 212, 0.4);
+}
+
+/* ============================================ */
+/* ANIMACIONES */
+/* ============================================ */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ============================================ */
+/* ✔️ MEJORA VISUAL DE LAS CARDS (compactas) */
+/* ============================================ */
+
+.appointment-card {
+  max-width: 100%;             
+  margin: 0 auto;                
+  padding: 20px 24px;            
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  display: flex;                 
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Encabezado más pequeño */
+.card-header {
+  margin-bottom: 8px;
+}
+
+.badge {
+  font-size: 11px;
+  padding: 6px 12px;
+}
+
+/* Organizar la información en 2 columnas */
+.card-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 24px;
+  margin-bottom: 12px;
+}
+
+.info-item {
+  margin-bottom: 4px;
+}
+
+.info-label {
+  font-size: 12px;
+}
+
+.info-value {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Botones más compactos */
+.card-actions {
+  margin-top: 8px;
+  display: flex;
+  gap: 12px;
+}
+
+.btn {
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 10px;
+}
+
+/* Hacer que NO ocupen toda la pantalla */
+.btn-reprogram,
+.btn-cancel {
+  flex: none;
+  width: 48%;
+}
+
+/* Compactar versión móvil */
+@media (max-width: 600px) {
+  .appointment-card {
+    max-width: 100%;
+  }
+
+  .card-info {
+    grid-template-columns: 1fr;
+  }
+
+  .btn-reprogram,
+  .btn-cancel {
+    width: 100%;
+  }
+}
+
+.appointments-grid {
+    align-items: start;
+}

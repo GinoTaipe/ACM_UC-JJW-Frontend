@@ -1,0 +1,250 @@
+.splash-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #29f8ff 0%, #2a4ea2 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.splash-content {
+  text-align: center;
+  color: white;
+}
+
+.splash-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo-image {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  animation: logoBounce 1s ease-out;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.splash-logo h1 {
+  font-size: 2.5rem;
+  margin: 0;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  animation: slideIn 0.8s ease-out 0.2s both;
+}
+
+.splash-logo p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  font-weight: 300;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  animation: slideIn 0.8s ease-out 0.4s both;
+}
+
+.splash-loader {
+  margin-top: 2rem;
+  animation: slideIn 0.8s ease-out 0.6s both;
+}
+
+.loader {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* ANIMACIONES */
+@keyframes logoBounce {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) translateY(-20px);
+  }
+  60% {
+    transform: scale(1.1) translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.splash-container.fade-out {
+  animation: fadeOut 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+/* ========================================
+   SPLASH SCREEN - HOSPITAL APPLICATION
+   Diseño Visual Mejorado
+   ======================================== */
+
+/* Logo principal con diseño profesional */
+.logo-image {
+  width: clamp(100px, 25vw, 180px);
+  height: clamp(100px, 25vw, 180px);
+  object-fit: cover;
+  border-radius: 50%;
+  
+  /* Borde elegante con efecto de profundidad */
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 
+    0 10px 40px rgba(0, 0, 0, 0.25),
+    0 0 0 8px rgba(255, 255, 255, 0.1),
+    inset 0 2px 4px rgba(255, 255, 255, 0.2);
+  
+  /* Animación mejorada */
+  animation: logoBounce 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  
+  /* Efectos visuales refinados */
+  filter: brightness(1.05) contrast(1.08) drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
+  background: white;
+  
+  /* Transición suave para hover (si aplica) */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Animación de entrada más dinámica y profesional */
+@keyframes logoBounce {
+  0% {
+    transform: scale(0) rotate(-180deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.15) rotate(10deg);
+  }
+  65% {
+    transform: scale(0.92) rotate(-5deg);
+  }
+  80% {
+    transform: scale(1.05) rotate(2deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+
+/* Animación de pulso sutil para dar vida al logo */
+@keyframes subtlePulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 
+      0 10px 40px rgba(0, 0, 0, 0.25),
+      0 0 0 8px rgba(255, 255, 255, 0.1);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 
+      0 12px 45px rgba(0, 0, 0, 0.3),
+      0 0 0 10px rgba(255, 255, 255, 0.15);
+  }
+}
+
+/* Aplicar pulso después de la animación inicial (opcional) */
+.logo-image.loaded {
+  animation: subtlePulse 3s ease-in-out infinite;
+}
+
+/* Efecto de brillo que pasa por el logo (opcional) */
+.logo-image::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 70%
+  );
+  transform: rotate(45deg);
+  animation: shine 3s ease-in-out 1.5s infinite;
+  pointer-events: none;
+}
+
+@keyframes shine {
+  0% {
+    left: -200%;
+  }
+  100% {
+    left: 200%;
+  }
+}
+
+/* Responsive optimizado */
+@media (max-width: 768px) {
+  .logo-image {
+    width: clamp(90px, 28vw, 150px);
+    height: clamp(90px, 28vw, 150px);
+    border-width: 3px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-image {
+    width: clamp(80px, 32vw, 130px);
+    height: clamp(80px, 32vw, 130px);
+    border-width: 3px;
+    box-shadow: 
+      0 8px 30px rgba(0, 0, 0, 0.25),
+      0 0 0 6px rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Accesibilidad: Reducir animaciones si el usuario lo prefiere */
+@media (prefers-reduced-motion: reduce) {
+  .logo-image {
+    animation: none;
+    transition: none;
+  }
+  
+  .logo-image::after {
+    animation: none;
+  }
+  
+  .logo-image.loaded {
+    animation: none;
+  }
+}
+
+/* Modo de alto contraste para accesibilidad */
+@media (prefers-contrast: high) {
+  .logo-image {
+    border: 4px solid white;
+    filter: contrast(1.2);
+  }
+}

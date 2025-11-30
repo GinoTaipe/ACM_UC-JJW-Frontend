@@ -1,0 +1,344 @@
+/* ============================================ */
+/* CONTENEDOR PRINCIPAL */
+/* ============================================ */
+
+.detail-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+
+.detail-header {
+  background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+  border-radius: 24px;
+  padding: 32px;
+  margin-bottom: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease;
+}
+
+.detail-title {
+  font-size: 36px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.detail-subtitle {
+  color: #e0f2fe;
+  font-size: 14px;
+}
+
+/* ============================================ */
+/* CONTENIDO */
+/* ============================================ */
+
+.detail-content {
+  animation: fadeIn 0.5s ease;
+}
+
+
+.detail-section {
+  background: #ffffff;
+  border-radius: 16px;      
+  padding: 28px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  animation: slideUp 0.5s ease;
+  transition: all 0.3s;
+  border: 2px solid #f3f4f6;  
+}
+
+.detail-section:hover {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 3px solid #f3f4f6;
+}
+
+.section-icon {
+  font-size: 28px;
+}
+
+/* ============================================ */
+/* INFO GRID (CUADRADOS) */
+/* ============================================ */
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.info-box {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  border: 2px solid #e5e7eb; /* CUADRADO */
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.info-label {
+  font-size: 13px;
+  color: #6b7280;
+  font-weight: 600;
+}
+
+.info-value {
+  font-size: 16px;
+  color: #1f2937;
+  font-weight: bold;
+}
+
+/* ============================================ */
+/* SIGNOS VITALES  */
+/* ============================================ */
+
+.vitals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.vital-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  border-radius: 16px;
+  border: 2px solid #e5e7eb; 
+  background: #ffffff;
+  transition: all 0.3s;
+}
+
+.vital-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.vital-icon {
+  font-size: 36px;
+}
+
+.vital-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.vital-label {
+  font-size: 13px;
+  color: #6b7280;
+  font-weight: 600;
+}
+
+.vital-value {
+  font-size: 20px;
+  color: #1f2937;
+  font-weight: bold;
+}
+
+/* ============================================ */
+/* LISTAS  */
+/* ============================================ */
+
+.list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 12px;
+  font-size: 15px;
+  color: #374151;
+  line-height: 1.6;
+  border: 2px solid #e5e7eb; 
+  background: #ffffff;
+}
+
+/* ============================================ */
+/* SÍNTOMAS */
+/* ============================================ */
+
+.symptoms-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.symptom-tag {
+  padding: 12px 20px;
+  background: #fff;
+  color: #831843;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  border: 2px solid #f9a8d4; 
+  transition: all 0.3s;
+}
+
+.symptom-tag:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(236, 72, 153, 0.3);
+}
+
+/* ============================================ */
+/* TEXT BOXES CUADRADAS */
+/* ============================================ */
+
+.text-box {
+  background: #f9fafb;
+  padding: 20px;
+  border-radius: 12px;
+  border: 2px solid #e5e7eb; 
+}
+
+.text-box p {
+  font-size: 15px;
+  color: #374151;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.conclusion-box {
+  background: #d1fae5;
+  border: 2px solid #10b981;
+}
+
+.conclusion-box p {
+  color: #065f46;
+  font-weight: 600;
+}
+
+.recommendations-box {
+  background: #dbeafe;
+  border: 2px solid #3b82f6;
+}
+
+.recommendations-box p {
+  color: #1e40af;
+  font-weight: 600;
+}
+
+/* ============================================ */
+/* FOOTER */
+/* ============================================ */
+
+.detail-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 2px solid #e5e7eb;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 14px 32px;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-back {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.btn-back:hover {
+  background: #e5e7eb;
+  transform: translateX(-5px);
+}
+
+.btn-pdf {
+  background: linear-gradient(to right, #ef4444, #dc2626);
+  color: white;
+}
+
+.btn-pdf:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 16px rgba(239, 68, 68, 0.4);
+}
+
+/* ============================================ */
+/* ERROR */
+/* ============================================ */
+
+.detail-error {
+  text-align: center;
+  padding: 60px 20px;
+  background: #ffffff;
+  border-radius: 20px;
+  border: 2px solid #e5e7eb; 
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.detail-error h2 {
+  font-size: 28px;
+  color: #ef4444;
+  margin-bottom: 24px;
+}
+
+/* ============================================ */
+/* ANIMACIONES */
+/* ============================================ */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================ */
+/* RESPONSIVE */
+/* ============================================ */
+
+@media (max-width: 768px) {
+  .detail-title {
+    font-size: 28px;
+  }
+
+  .section-title {
+    font-size: 20px;
+  }
+
+  .info-grid,
+  .vitals-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-footer {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
